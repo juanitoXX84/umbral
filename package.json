@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "scripts": {
+    "server": "npm start --prefix server",
+    "app": "npm start --prefix mobile"
+  }
+}

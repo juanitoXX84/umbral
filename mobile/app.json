@@ -1,0 +1,117 @@
+{
+  "expo": {
+    "name": "Umbral",
+    "slug": "umbral",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "umbral",
+    "userInterfaceStyle": "dark",
+    "ios": {
+      "icon": "./assets/expo.icon",
+      "bundleIdentifier": "com.umbral.app",
+      "infoPlist": {
+        "NSCameraUsageDescription": "Umbral graba un clip corto de video si no cancelas una alerta.",
+        "NSMicrophoneUsageDescription": "Umbral abre el micrófono solo si no cancelas una alerta, para que tu hogar pueda escucharte.",
+        "NSMotionUsageDescription": "Umbral lee el movimiento del teléfono para detectar caídas, impactos y forcejeos.",
+        "NSFaceIDUsageDescription": "Umbral confirma con tu huella o tu rostro antes de armar o desarmar.",
+        "UIBackgroundModes": [
+          "location",
+          "audio"
+        ]
+      }
+    },
+    "android": {
+      "package": "com.umbral.app",
+      "usesCleartextTraffic": true,
+      "permissions": [
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_BACKGROUND_LOCATION",
+        "RECORD_AUDIO",
+        "CAMERA",
+        "VIBRATE",
+        "USE_BIOMETRIC",
+        "USE_FINGERPRINT",
+        "FOREGROUND_SERVICE",
+        "FOREGROUND_SERVICE_LOCATION",
+        "FOREGROUND_SERVICE_MICROPHONE",
+        "POST_NOTIFICATIONS"
+      ],
+      "adaptiveIcon": {
+        "backgroundColor": "#0E0B09",
+        "foregroundImage": "./assets/images/android-icon-foreground.png",
+        "backgroundImage": "./assets/images/android-icon-background.png",
+        "monochromeImage": "./assets/images/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "output": "static",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-audio",
+        {
+          "microphonePermission": "Umbral abre el micrófono solo si no cancelas una alerta, para que tu hogar pueda escucharte.",
+          "recordAudioAndroid": true,
+          "enableBackgroundRecording": true
+        }
+      ],
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Umbral graba un clip corto de video si no cancelas una alerta.",
+          "microphonePermission": "Umbral abre el micrófono solo si no cancelas una alerta, para que tu hogar pueda escucharte.",
+          "recordAudioAndroid": true
+        }
+      ],
+      "expo-secure-store",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Umbral usa una foto tuya para mostrarte en el mapa del hogar."
+        }
+      ],
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "Umbral guarda en tu teléfono el video de una alerta.",
+          "savePhotosPermission": "Umbral guarda en tu teléfono el video de una alerta.",
+          "granularPermissions": ["video"]
+        }
+      ],
+      "expo-font",
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Umbral usa tu ubicación mientras la protección está armada para que tu hogar sepa dónde estás.",
+          "locationAlwaysAndWhenInUsePermission": "Umbral sigue tu ubicación en segundo plano solo con la protección armada.",
+          "isAndroidBackgroundLocationEnabled": true,
+          "isAndroidForegroundServiceEnabled": true
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "color": "#FFA94D"
+        }
+      ],
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#0E0B09",
+          "image": "./assets/images/splash-icon.png",
+          "imageWidth": 76
+        }
+      ],
+      "expo-video"
+    ],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    }
+  }
+}

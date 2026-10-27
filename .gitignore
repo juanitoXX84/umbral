@@ -1,0 +1,15 @@
+node_modules
+.expo
+dist
+server/data
+.env
+*.log
+
+build/
+.gradle/
+.kotlin/
+.idea/
+local.properties
+*.apk
+.shots/
+/wear/
